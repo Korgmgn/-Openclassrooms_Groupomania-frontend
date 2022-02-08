@@ -91,7 +91,7 @@ export default {
         },
         //Lancée lors du cycle createdEnvoie une requête pour obtenir l'utilisateur voulu.
         async getAccount() {
-            const response = await axios.get('http://localhost:3000/users/account', {
+            const response = await axios.get('https://groupomania-hz-api.herokuapp.com/users/account', {
                 headers: {
                     Authorization: 'Bearer ' + localStorage.getItem('token')
                 }
@@ -104,7 +104,7 @@ export default {
         //Permet la suppression de l'utilisateur 
         async handleAccountDelete() {
             try {
-                await axios.delete('http://localhost:3000/users/delete', {
+                await axios.delete('https://groupomania-hz-api.herokuapp.com/users/delete', {
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('token')
                     }
@@ -121,7 +121,7 @@ export default {
                 this.emailError = null
                 this.passwordError = null
 
-                await axios.put('http://localhost:3000/users/modify', {
+                await axios.put('https://groupomania-hz-api.herokuapp.com/users/modify', {
                     username: this.username,
                     email: this.email,
                     password: this.password

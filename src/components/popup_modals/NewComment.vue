@@ -39,7 +39,7 @@ export default {
         async handleNewComment() {
             if(this.content && this.content.length >= 2) {
                 //Ici on ajoute dynamique à la requête l'uuid du post, que l'API récupère sous req.params, ce qui permet à l'ORM de trouver le post dans lequel on créé le commentaire
-                await axios.post(`http://localhost:3000/comments/create/${this.postUuid}`, {
+                await axios.post(`https://groupomania-hz-api.herokuapp.com/comments/create/${this.postUuid}`, {
                     content: this.content
                 },
                 {

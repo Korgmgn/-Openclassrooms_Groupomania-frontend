@@ -120,7 +120,7 @@ export default {
         async getUserPosts() {
             try { 
                 //Ici on récupère les paramètres d'url pour les envoyer à l'api en req.params, ce qui permet à l'ORM de trouver l'utilisateur en question
-                const response = await axios.get(`http://localhost:3000/posts/userposts/${this.$route.params.useruuid}`, { 
+                const response = await axios.get(`https://groupomania-hz-api.herokuapp.com/posts/userposts/${this.$route.params.useruuid}`, { 
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('token')
                     }
@@ -142,7 +142,7 @@ export default {
             const commentUuid = event.target.closest('div.text-bloc').getAttribute('data-comment-uuid')
             if(postUuid && !commentUuid) {
                 try {
-                    await axios.delete(`http://localhost:3000/posts/delete/${postUuid}`, {
+                    await axios.delete(`https://groupomania-hz-api.herokuapp.com/posts/delete/${postUuid}`, {
                         headers: {
                             Authorization: 'Bearer ' + localStorage.getItem('token')
                         }
@@ -153,7 +153,7 @@ export default {
                 }
             } else if(!postUuid && commentUuid){
                 try {
-                    await axios.delete(`http://localhost:3000/comments/delete/${commentUuid}`, {
+                    await axios.delete(`https://groupomania-hz-api.herokuapp.com/comments/delete/${commentUuid}`, {
                         headers: {
                             Authorization: 'Bearer ' + localStorage.getItem('token')
                         }

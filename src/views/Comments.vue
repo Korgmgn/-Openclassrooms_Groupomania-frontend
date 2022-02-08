@@ -77,7 +77,7 @@ export default {
         //Cette fonction lancée lors du cycle created, récupère tous les commentaires
         async getPostComments() {
             try{
-                const response = await axios.get(`http://localhost:3000/comments/allcomments/${this.$route.params.postUuid}`, {
+                const response = await axios.get(`https://groupomania-hz-api.herokuapp.com/comments/allcomments/${this.$route.params.postUuid}`, {
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('token')
                     }
@@ -96,7 +96,7 @@ export default {
             const commentUuid = event.target.closest('div.text-bloc').getAttribute('data-comment-uuid')
             try {
                 //Ici on ajoute dynamique à la requête l'uuid du commentaire, que l'API récupère sous req.params, ce qui permet à l'ORM de trouver le commentaire en question
-                await axios.delete(`http://localhost:3000/comments/delete/${commentUuid}`, {
+                await axios.delete(`https://groupomania-hz-api.herokuapp.com/comments/delete/${commentUuid}`, {
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('token')
                     }

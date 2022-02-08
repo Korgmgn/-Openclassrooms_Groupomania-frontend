@@ -84,7 +84,7 @@ export default {
                 this.emailError = null
                 this.passwordError = null
                 
-                const response = await axios.post('http://localhost:3000/users/signup', {
+                const response = await axios.post('https://groupomania-hz-api.herokuapp.com/users/signup', {
                     username: this.signupUsername,
                     email: this.signupEmail,
                     password: this.signupPassword

@@ -62,7 +62,7 @@ export default {
         async handleLogin() {
             try {
                 if(this.checkFormInput(this.loginUsername, this.loginPassword) == true) {
-                    const response = await axios.post('http://localhost:3000/users/login', {
+                    const response = await axios.post('https://groupomania-hz-api.herokuapp.com/users/login', {
                         username: this.loginUsername,
                         password: this.loginPassword
                     })

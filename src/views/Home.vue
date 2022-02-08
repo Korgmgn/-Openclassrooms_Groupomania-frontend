@@ -100,7 +100,7 @@ export default {
         //Cette fonction lancée lors du cycle created, récupère tous les posts
         async getAllPosts() {
             try {
-                const response = await axios.get('http://localhost:3000/posts/allposts', {
+                const response = await axios.get('https://groupomania-hz-api.herokuapp.com/posts/allposts', {
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('token')
                     }
@@ -119,7 +119,7 @@ export default {
             const postUuid = event.target.closest('div.text-bloc').getAttribute('data-post-uuid')
             try {
                 //Ici on ajoute dynamique à la requête l'uuid du post, que l'API récupère sous req.params, ce qui permet à l'ORM de trouver le post en question
-                await axios.delete(`http://localhost:3000/posts/delete/${postUuid}`, {
+                await axios.delete(`https://groupomania-hz-api.herokuapp.com/posts/delete/${postUuid}`, {
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('token')
                     }

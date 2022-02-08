@@ -46,7 +46,7 @@ export default {
                 formData.append("content", this.content);
                 formData.append("image", this.imageURL);
                 formData.append("userUuid", localStorage.getItem('userUuid'))
-                await axios.post('http://localhost:3000/posts/create', formData, {
+                await axios.post('https://groupomania-hz-api.herokuapp.com/posts/create', formData, {
                     headers: {
                         'Content-type': 'multipart/form-data',
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
