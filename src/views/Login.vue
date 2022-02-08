@@ -73,8 +73,8 @@ export default {
 
                     this.$router.push('/home')
                 }
-            } catch (error) {
-                this.loginError = error.response.data.error
+            } catch () {
+                this.loginError = "Connexion échouée"
             }
         }
     }
